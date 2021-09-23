@@ -11,7 +11,7 @@ More tests can be added by editing the appropriate ```.txt``` files with the inp
 ## Installation
 Clone the tester into the root directory of your philosophers project.  
 ```bash
-git clone git@github.com:MichelleJiam/LazyPhilosophersTester.git
+https://github.com/MichelleJiam/LazyPhilosophersTester.git
 ```
 
 ## Usage
