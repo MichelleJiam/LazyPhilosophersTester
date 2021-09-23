@@ -7,13 +7,13 @@ import os
 import signal
 import sys
 
-if len(sys.argv) != 2:
-	print "Please (only) give command uWu"
+if len(sys.argv) < 2:
+	print "Please give command uWu"
 	exit(1)
 
 # === CHANGE THIS ===
 command = sys.argv[1]
-timeout = 10
+timeout = int(sys.argv[2]) if len(sys.argv) > 2 else 10
 # === NO TOUCHY ===
 
 # Vars

@@ -1,5 +1,3 @@
-4 200 205 200
-a philo should die
 1 800 200 200
 a philo should die
 4 310 200 100
