@@ -71,7 +71,7 @@ die_test () {
 
 no_die_test () {
 	printf "\n${CYAN}=== Starting tests where a philosopher should NOT die ===\n${RESET}"
-	read -r -n 1 -p $'\nPlease enter desired timer for tests or press ENTER to use default 10 seconds: ' timeout
+	read -r -p $'\nPlease enter desired timer for tests or press ENTER to use default 10 seconds: ' timeout
 	printf "\n"
 	if [[ $timeout != *[[:digit:]]* ]]; then
 		timeout=10
@@ -86,7 +86,7 @@ no_die_test () {
 			./PhilosophersChecker.py "$1 $input" $timeout > /dev/null & pid=$!   # silence checker output and run in bg
 			local elapsed=0
 			while ps -p $pid &>/dev/null; do    # check if checker script still running
-				draw_progress_bar $elapsed $timeout "seconds"
+				draw_progress_bar $elapsed $timeout "seconds" # TODO: fix extra space at end of progress bar, extra )
 				if [[ $elapsed == $timeout ]]; then
 					printf "\n\n${GREEN}OK${RESET}\n"
 					(( PASS++ ))
