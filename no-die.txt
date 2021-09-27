@@ -6,3 +6,5 @@ no one should die
 no one should die
 100 800 200 200
 no one should die
+105 800 200 200
+no one should die
