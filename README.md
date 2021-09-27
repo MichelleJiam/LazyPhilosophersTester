@@ -8,6 +8,8 @@ It allows you to test 2 scenarios:
 
 More tests can be added by editing the appropriate ```.txt``` files with the input and expected outcome.
 
+![screenshot of tester being run](https://i.imgur.com/iAfsRWM.png)
+
 ## Installation
 Clone the tester into the root directory of your philosophers project.  
 ```bash
