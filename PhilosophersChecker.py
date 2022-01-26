@@ -46,7 +46,7 @@ for x in range(0, timeout):
 
 # Kill dem!
 if pipe != None:
-	os.kill(pid, signal.SIGKILL)
+	os.system("killall philo SIGTERM")
 	pipe.kill()
 	pipe = None
 
