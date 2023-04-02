@@ -8,7 +8,7 @@ import signal
 import sys
 
 if len(sys.argv) < 2:
-	print "Please give command uWu"
+	print("Please give command uWu")
 	exit(1)
 
 # === CHANGE THIS ===
@@ -30,17 +30,17 @@ time.sleep(1)
 
 # If cannot open:
 if pipe.poll() != None:
-	print "Never started..."
+	print("Never started...")
 	exit(1)
 else:
 	pid = pipe.pid
-	print "PID: %s" % (pid)
+	print("PID: %s" % (pid))
 
 # Do some counting
 for x in range(0, timeout):
-	print timeout - x
+	print(timeout - x)
 	if pipe.poll() != None:
-		print "Died :("
+		print("Died :(")
 		exit(1)
 	time.sleep(1)
 
@@ -51,4 +51,4 @@ if pipe != None:
 	pipe = None
 
 # STONKS!
-print "Worked! :D"
+print("Worked! :D")
