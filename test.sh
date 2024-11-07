@@ -111,28 +111,16 @@ no_die_test () {
 	exec 3<&-	# close fd 3
 }
 
-choose_test () {
-	read -r -n 1 -p $'\nChoose test to run:\n\t[0] all tests\n\t[1] die tests\n\t[2] no-die tests (can take a while)\n\t[ESC] exit tester\n\n' choice
-	printf "\n"
-	case $choice in
-		0)
-			die_test "$1"
-			no_die_test "$1"
-			;;
-		1)
-			die_test "$1"
-			;;
-		2)
-			no_die_test "$1"
-			;;
-		$'\e')	# ESC key
-			exit 0
-			;;
-		*)
-			printf "${RED}Invalid choice\n${RESET}"
-			choose_test	"$1" # reprompt
-			;;
-	esac
+choose_test() {
+    read -rn1 -p $'\nChoose test to run:\n\t[0] all tests\n\t[1] die tests\n\t[2] no-die tests (can take a while)\n\t[ESC] exit tester\n\n' choice
+    printf "\n"
+    case $choice in
+        0) die_test "$1" && no_die_test "$1" ;;
+        1) die_test "$1" ;;
+        2) no_die_test "$1" ;;
+        $'\e') exit 0 ;;
+        *) printf "${RED}Invalid choice\n${RESET}"; choose_test "$1" ;;
+    esac
 }
 
 printf "${BOLD}\n💭 The Lazy Philosophers Tester 💭\n${RESET}"
